@@ -24,7 +24,7 @@ Supported infrastructure result:
 Deploy the sandbox starter in its own vpc in a public subnet.
 ```
 module "sst" {
-  source       = "terraform-aviatrix-modules/sandbox-starter/aviatrix"
+  source       = "terraform-aviatrix-modules/aws-sandbox-starter/aviatrix"
   version      = "1.0.0"
   keypair_name = "my_ssh_keypair"
 }
@@ -38,7 +38,7 @@ output "sandbox_starter_url" {
 Deploy the sandbox starter in an existing vpc (whose public subnet has 'public' in its name).
 ```
 module "sst" {
-  source       = "terraform-aviatrix-modules/sandbox-starter/aviatrix"
+  source       = "terraform-aviatrix-modules/aws-sandbox-starter/aviatrix"
   version      = "1.0.0"
   keypair_name = "my_ssh_keypair"
   vpc_id       = "vpc-0a12345678b9c012d3"
@@ -53,7 +53,7 @@ output "sandbox_starter_url" {
 Deploy the sandbox starter in an existing vpc in an explicit public subnet.
 ```
 module "sst" {
-  source       = "terraform-aviatrix-modules/sandbox-starter/aviatrix"
+  source       = "terraform-aviatrix-modules/aws-sandbox-starter/aviatrix"
   version      = "1.0.0"
   keypair_name = "my_ssh_keypair"
   vpc_id       = "vpc-0a12345678b9c012d3"
@@ -69,7 +69,7 @@ output "sandbox_starter_url" {
 Deploy the sandbox starter in an existing vpc in an explicit private subnet.
 ```
 module "sst" {
-  source       = "terraform-aviatrix-modules/sandbox-starter/aviatrix"
+  source       = "terraform-aviatrix-modules/aws-sandbox-starter/aviatrix"
   version      = "1.0.0"
   keypair_name = "my_ssh_keypair"
   private      = true
