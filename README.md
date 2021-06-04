@@ -1,12 +1,23 @@
 # Aviatrix Sandbox Starter
 
 ### Description
-This module deploys the [Aviatrix Sandbox Starter](https://community.aviatrix.com/t/g9hx9jh/aviatrix-sandbox-starter-tool-spin-up-cloud-networks-in-minutes) to help spin up cloud networks in minutes.
+This module deploys the [Aviatrix Sandbox Starter](https://community.aviatrix.com/t/g9hx9jh/aviatrix-sandbox-starter-tool-spin-up-cloud-networks-in-minutes) to help spin up cloud networks in minutes. Deployment options include:
+
+- Launch Aviatrix Controller in AWS
+- Launch connected Aviatrix Transit and Spoke VPCs in AWS
+- Launch EC2 instances in spoke VPCs for connectivity validation
+- Launch connected Aviatrix Transit and Spoke VPCs in Azure
+- Build Transit Peering between AWS and Azure
 
 ### Compatibility
 | Module version | Terraform version | Controller version | Terraform provider version |
 | :------------- | :---------------- | :----------------- | :------------------------- |
 | v1.0.0         | 0.13              | N/A                | N/A                        |
+
+### Diagram
+
+Supported infrastructure result:
+<img src="https://github.com/terraform-aviatrix-modules/terraform-aviatrix-aws-sandbox-starter/blob/master/img/sst.png?raw=true">
 
 ### Usage Examples
 
