@@ -1,11 +1,16 @@
 # Latest Sandbox Starter AMI
 data "aws_ami" "sst" {
   most_recent = true
-  owners      = ["600530653622"] #Aviatrix
+  owners      = ["503512322177"] #Aviatrix
   filter {
     name   = "name"
     values = ["Aviatrix Sandbox Starter*"]
   }
+}
+
+# Grab the source IP that is launching the sst
+data "http" "myip" {
+  url = "http://ipv4.icanhazip.com"
 }
 
 # Sandbox starter will be deployed to the region of the configured calling provider
@@ -63,7 +68,7 @@ resource "aws_security_group_rule" "sst_ingress" {
   from_port         = 443
   to_port           = 443
   protocol          = "tcp"
-  cidr_blocks       = ["0.0.0.0/0"]
+  cidr_blocks       = ["${chomp(data.http.myip.body)}/32"] # locked to the source ip that launched the sst
   security_group_id = aws_security_group.sst.id
 }
 

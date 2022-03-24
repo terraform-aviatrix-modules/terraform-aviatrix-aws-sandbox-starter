@@ -12,6 +12,7 @@ This module deploys the [Aviatrix Sandbox Starter](https://community.aviatrix.co
 ### Compatibility
 | Module version | Terraform version | Controller version | Terraform provider version |
 | :------------- | :---------------- | :----------------- | :------------------------- |
+| v1.0.2         | >=0.13            | N/A                | N/A                        |
 | v1.0.1         | >=0.13            | N/A                | N/A                        |
 | v1.0.0         | 0.13              | N/A                | N/A                        |
 
@@ -23,10 +24,11 @@ Supported infrastructure result:
 ### Usage Examples
 
 Deploy the sandbox starter in its own vpc in a public subnet.
-```
+
+```bash
 module "sst" {
   source       = "terraform-aviatrix-modules/aws-sandbox-starter/aviatrix"
-  version      = "1.0.1"
+  version      = "1.0.2"
   keypair_name = "my_ssh_keypair"
 }
 
@@ -37,10 +39,11 @@ output "sandbox_starter_url" {
 ```
 
 Deploy the sandbox starter in an existing vpc (whose public subnet has 'public' in its name).
-```
+
+```bash
 module "sst" {
   source       = "terraform-aviatrix-modules/aws-sandbox-starter/aviatrix"
-  version      = "1.0.1"
+  version      = "1.0.2"
   keypair_name = "my_ssh_keypair"
   vpc_id       = "vpc-0a12345678b9c012d3"
 }
@@ -52,10 +55,11 @@ output "sandbox_starter_url" {
 ```
 
 Deploy the sandbox starter in an existing vpc in an explicit public subnet.
-```
+
+```bash
 module "sst" {
   source       = "terraform-aviatrix-modules/aws-sandbox-starter/aviatrix"
-  version      = "1.0.1"
+  version      = "1.0.2"
   keypair_name = "my_ssh_keypair"
   vpc_id       = "vpc-0a12345678b9c012d3"
   subnet_id    = "subnet-0123ab456c78d901e"
@@ -68,10 +72,11 @@ output "sandbox_starter_url" {
 ```
 
 Deploy the sandbox starter in an existing vpc in an explicit private subnet.
-```
+
+```bash
 module "sst" {
   source       = "terraform-aviatrix-modules/aws-sandbox-starter/aviatrix"
-  version      = "1.0.1"
+  version      = "1.0.2"
   keypair_name = "my_ssh_keypair"
   private      = true
   vpc_id       = "vpc-0a12345678b9c012d3"
